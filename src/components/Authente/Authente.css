@@ -1,0 +1,133 @@
+.signin-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+}
+
+.signin-main label {
+    color: #3498db;
+}
+
+.signin-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(109, 109, 109, 0.2);
+    overflow: hidden;
+}
+
+.signin-container>div {
+    width: 50%;
+    transition: opacity 0.5s ease;
+}
+
+.signin-image {
+    width: 50%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.signin-main h2 {
+    color: #2d76c0;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.signin-main p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.signin-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.signin-links a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signin-links a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+.signin-button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+@media only screen and (max-width: 1000px),
+(max-device-width:1000px) {
+    .signin-main h2 {
+        font-size: 1.6rem;
+    }
+
+    .signin-main p,
+    .signin-main a {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 600px),
+(max-device-width:600px) {
+    .signin-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .signin-container>div,
+    .signin-image {
+        width: 100%;
+    }
+
+    .signin-main h2 {
+        font-size: 1.4rem;
+    }
+
+    .signin-main p,
+    .signin-main a {
+        font-size: 0.8rem;
+    }
+}
