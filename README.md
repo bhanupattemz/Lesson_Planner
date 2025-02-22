@@ -40,24 +40,6 @@ Use the following credentials to log in:
 
 ---
 
-## 📂 Project Structure  
-```plaintext
-src  
-│── assets/                 # Images & Icons  
-│── components/             # Reusable UI Components  
-│   │── Header.js  
-│   │── Footer.js  
-│   │── LessonForm.js  
-│   │── LessonDisplay.js  
-│── pages/                  # Pages  
-│   │── Login.js  
-│   │── Home.js  
-│   │── Planner.js  
-│── context/                # Context API for Auth  
-│── App.js                  # Main Application File  
-│── index.js                # ReactDOM Render  
-└── index.css               # Global Styles  
-
 ## Installation
 
 1. **Clone the repository:**
