@@ -7,27 +7,56 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-# AI-Powered Lesson Planner
+# AI-Powered Lesson Planner 🚀  
 
-An intelligent lesson planning tool that leverages AI to generate customized lesson plans. Designed for educators to easily create, edit, and download lesson plans in PDF format. 
+A modern web application designed to help educators create detailed and customizable lesson plans. This project leverages React.js, ShadCN for UI components, and the Google Gemini API to generate AI-powered lesson content.  
 
-## Features
-- AI-powered lesson generation using Google Gemini API
-- User authentication (login and registration) with bcrypt password hashing
-- Responsive design with dark and light theme support
-- Editable lesson details including topic, grade level, objectives, and more
-- PDF download option for generated lesson plans
+---
 
-## Demo Login
-Use the following credentials to explore the app:
-Email: demouser@demo.com
-Password: demouser
+## 📖 Features  
+- Dummy Login (Frontend-Only)  
+- Structured Lesson Plan Form  
+- AI-Generated Lesson Content using Google Gemini API  
+- Editable Lesson Plan with ShadCN components  
+- Download Lesson Plan as PDF  
+- Dark Mode (Always Enabled for Header)  
+- Responsive Design  
 
-## Technologies Used
-- **React.js** with ShadCN and TailwindCSS for UI components and styling
-- **Google Gemini API** for AI-generated lesson content
-- **Local Storage** and **Session Management** for user authentication
-- **bcryptjs** for secure password hashing
+---
+
+## 🚀 Demo  
+Use the following credentials to log in:  
+- **Email:** demouser@demo.com  
+- **Password:** demouser  
+
+---
+
+## 🔧 Tech Stack  
+- **Frontend:** React.js (Vite)  
+- **UI Components:** ShadCN + TailwindCSS  
+- **API Integration:** Google Gemini API (free version)  
+- **State Management:** React State & Context API  
+- **PDF Handling:** react-to-print or jsPDF  
+
+---
+
+## 📂 Project Structure  
+```plaintext
+src  
+│── assets/                 # Images & Icons  
+│── components/             # Reusable UI Components  
+│   │── Header.js  
+│   │── Footer.js  
+│   │── LessonForm.js  
+│   │── LessonDisplay.js  
+│── pages/                  # Pages  
+│   │── Login.js  
+│   │── Home.js  
+│   │── Planner.js  
+│── context/                # Context API for Auth  
+│── App.js                  # Main Application File  
+│── index.js                # ReactDOM Render  
+└── index.css               # Global Styles  
 
 ## Installation
 
