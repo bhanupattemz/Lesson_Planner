@@ -23,14 +23,32 @@ export default function LessonPlan() {
 
   const generatePDF = () => {
     const content = contentRef.current;
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
     domtoimage.toPng(content).then((imgData) => {
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (content.offsetHeight * pdfWidth) / content.offsetWidth;
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      pdf.save("lesson-plan.pdf");
+      const img = new Image();
+      img.src = imgData;
+      img.onload = () => {
+        const imgWidth = content.offsetWidth;
+        const imgHeight = content.offsetHeight;
+        let ratio = imgWidth / pdfWidth;
+        let scaledHeight = imgHeight / ratio;
+
+        let y = 0;
+        while (y < scaledHeight) {
+          pdf.addImage(imgData, "PNG", 0, -y, pdfWidth, scaledHeight);
+          y += pdfHeight;
+          if (y < scaledHeight) {
+            pdf.addPage();
+          }
+        }
+        pdf.save("lesson-plan.pdf");
+      };
     });
   };
+
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900 py-8">

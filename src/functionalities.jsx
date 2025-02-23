@@ -2,8 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const getPlannedData = async (userData) => {
-    // const API_KEY = "AIzaSyDQ6qb7zPs7OJ-Ndm9EmF_iYqMbefjIsOg";
-    const API_KEY="AIzaSyB_wj9TO5NTfaQDr7M1S415rApYV7z8-v8"
+    const API_KEY="AIzaSyAxOPksOP2LmJkD5LEqLYIrUl6UGowCi1Y"
     try {
         const response = await axios.post(
             `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
