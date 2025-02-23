@@ -69,7 +69,7 @@ export default function TopicPlain() {
     }, [_id]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-violet-50 to-pink-50 dark:from-slate-900 dark:to-purple-900 py-8 px-4">
+        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900 py-8 px-4">
             <div className="max-w-5xl mx-auto">
                 <img
                     src="https://res.cloudinary.com/dmvxvzb5n/image/upload/v1719822500/samples/ecommerce/analog-classic.jpg"
@@ -79,54 +79,54 @@ export default function TopicPlain() {
 
                 <Card className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80">
                     <CardHeader>
-                        <CardTitle className="text-3xl font-serif text-purple-800 dark:text-purple-300">Lesson Plan</CardTitle>
+                        <CardTitle className="text-3xl font-serif text-blue-800 dark:text-blue-300">Lesson Plan</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Date *</label>
+                                <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Date *</label>
                                 <Input
                                     required
                                     disabled={formDisable}
                                     type="date"
                                     value={formData.summary?.date}
                                     onChange={(e) => handleChange(e, "summary", undefined, "date")}
-                                    className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                    className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Subject *</label>
+                                <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Subject *</label>
                                 <Input
                                     required
                                     disabled={formDisable}
                                     value={formData.summary?.subject}
                                     onChange={(e) => handleChange(e, "summary", undefined, "subject")}
-                                    className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                    className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Grade *</label>
+                                <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Grade *</label>
                                 <Input
                                     required
                                     disabled={formDisable}
                                     value={formData.summary?.grade}
                                     onChange={(e) => handleChange(e, "summary", undefined, "grade")}
-                                    className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                    className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Topic *</label>
+                                <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Topic *</label>
                                 <Input
                                     required
                                     disabled={formDisable}
                                     value={formData.summary?.topic}
                                     onChange={(e) => handleChange(e, "summary", undefined, "topic")}
-                                    className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                    className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                 />
                             </div>
                         </div>
                         <div className="space-y-4">
-                            <label className="block text-sm font-medium mb-4 text-violet-700 dark:text-violet-300">Key Concepts</label>
+                            <label className="block text-sm font-medium mb-4 text-blue-700 dark:text-blue-300">Key Concepts</label>
                             <div className="space-y-4">
                                 {formData.summary?.keyConcepts.map((concept, index) => (
                                     <div key={index} className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function TopicPlain() {
                                                     }
                                                 }));
                                             }}
-                                            className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                            className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         />
                                         {!formDisable && (
                                             <Button
@@ -167,7 +167,7 @@ export default function TopicPlain() {
                                     <Input
                                         value={keyConcept || ''}
                                         onChange={(e) => setKeyConcept(e.target.value)}
-                                        className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         placeholder="Add new concept"
                                     />
                                     <Button
@@ -183,7 +183,7 @@ export default function TopicPlain() {
                                                 setKeyConcept(null);
                                             }
                                         }}
-                                        className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                                        className="bg-blue-500 hover:bg-blue-600 text-white"
                                     >
                                         Add
                                     </Button>
@@ -192,7 +192,7 @@ export default function TopicPlain() {
                         </div>
 
                         <div className="space-y-4">
-                            <label className="block text-sm font-medium mb-4 text-violet-700 dark:text-violet-300">Materials Required *</label>
+                            <label className="block text-sm font-medium mb-4 text-blue-700 dark:text-blue-300">Materials Required *</label>
                             <div className="space-y-4">
                                 {formData.materials && formData.materials.map((material, index) => (
                                     <div key={index} className="flex items-center gap-4">
@@ -201,7 +201,7 @@ export default function TopicPlain() {
                                             disabled={formDisable}
                                             value={material.name}
                                             onChange={(e) => handleChange(e, "materials", index, "name")}
-                                            className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                            className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         />
                                         <Select
                                             disabled={formDisable}
@@ -237,7 +237,7 @@ export default function TopicPlain() {
                                             placeholder="New material"
                                             value={material.name || ''}
                                             onChange={(e) => { setMaterial(prev => ({ ...prev, name: e.target.value })); }}
-                                            className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                            className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         />
                                         <Select
                                             value={material.required || 'false'}
@@ -258,7 +258,7 @@ export default function TopicPlain() {
                                                     setMaterial({});
                                                 }
                                             }}
-                                            className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                                            className="bg-blue-500 hover:bg-blue-600 text-white"
                                         >
                                             Add
                                         </Button>
@@ -268,18 +268,18 @@ export default function TopicPlain() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Objective *</label>
+                            <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Objective *</label>
                             <Input
                                 required
                                 disabled={formDisable}
                                 value={formData.objective}
                                 onChange={(e) => handleChange(e, "objective")}
-                                className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                             />
                         </div>
 
                         <div className="space-y-4">
-                            <label className="block text-sm font-medium mb-4 text-violet-700 dark:text-violet-300">Lesson Outline *</label>
+                            <label className="block text-sm font-medium mb-4 text-blue-700 dark:text-blue-300">Lesson Outline *</label>
                             {formData.outline && formData.outline.map((item, index) => (
                                 <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <Input
@@ -288,7 +288,7 @@ export default function TopicPlain() {
                                         value={item.duration}
                                         onChange={(e) => handleChange(e, "outline", index, "duration")}
                                         placeholder="Duration"
-                                        className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                     />
                                     <Input
                                         required
@@ -296,7 +296,7 @@ export default function TopicPlain() {
                                         value={item.guide}
                                         onChange={(e) => handleChange(e, "outline", index, "guide")}
                                         placeholder="Guide"
-                                        className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                     />
                                     <div className="flex items-center gap-2">
                                         <Input
@@ -305,7 +305,7 @@ export default function TopicPlain() {
                                             value={item.remark}
                                             onChange={(e) => handleChange(e, "outline", index, "remark")}
                                             placeholder="Remarks"
-                                            className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                            className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         />
                                         {!formDisable && (
                                             <Button
@@ -329,20 +329,20 @@ export default function TopicPlain() {
                                         value={outline.duration || ''}
                                         onChange={(e) => setOutline(prev => ({ ...prev, duration: e.target.value }))}
                                         placeholder="Duration"
-                                        className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                     />
                                     <Input
                                         value={outline.guide || ''}
                                         onChange={(e) => setOutline(prev => ({ ...prev, guide: e.target.value }))}
                                         placeholder="Guide"
-                                        className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                     />
                                     <div className="flex items-center gap-2">
                                         <Input
                                             value={outline.remark || ''}
                                             onChange={(e) => setOutline(prev => ({ ...prev, remark: e.target.value }))}
                                             placeholder="Remarks"
-                                            className="border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                            className="border-blue-200 focus:border-blue-500 dark:border-blue-700"
                                         />
                                         <Button
                                             onClick={() => {
@@ -351,7 +351,7 @@ export default function TopicPlain() {
                                                     setOutline({});
                                                 }
                                             }}
-                                            className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                                            className="bg-blue-500 hover:bg-blue-600 text-white"
                                         >
                                             Add
                                         </Button>
@@ -361,13 +361,13 @@ export default function TopicPlain() {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-2 text-violet-700 dark:text-violet-300">Additional Notes</label>
+                            <label className="block text-sm font-medium mb-2 text-blue-700 dark:text-blue-300">Additional Notes</label>
                             <Textarea
                                 disabled={formDisable}
                                 value={formData.note}
                                 onChange={(e) => handleChange(e, "note")}
                                 placeholder="Add any additional notes here..."
-                                className="min-h-[100px] border-violet-200 focus:border-violet-500 dark:border-violet-700"
+                                className="min-h-[100px] border-blue-200 focus:border-blue-500 dark:border-blue-700"
                             />
                         </div>
 
@@ -376,7 +376,7 @@ export default function TopicPlain() {
                                 <Button
                                     onClick={() => { setDisable(false); }}
                                     variant="outline"
-                                    className="border-orange-200 hover:bg-orange-100 text-orange-600 dark:border-orange-800 dark:hover:bg-orange-900"
+                                    className="border-blue-200 hover:bg-blue-100 text-blue-600 dark:border-blue-800 dark:hover:bg-blue-900"
                                 >
                                     Edit
                                 </Button>
@@ -389,7 +389,7 @@ export default function TopicPlain() {
                                         navigate(`/topic/${_id}`);
                                         setDisable(true);
                                     }}
-                                    className="bg-emerald-500 hover:bg-emerald-600 text-white"
+                                    className="bg-blue-500 hover:bg-blue-600 text-white"
                                 >
                                     Save
                                 </Button>

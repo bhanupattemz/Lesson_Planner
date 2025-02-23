@@ -13,14 +13,14 @@ const HeroPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-        <Card className="w-full md:w-1/2 shadow-lg animate-fade-in">
+        <Card className="w-full md:w-1/2 shadow-lg animate-fade-in backdrop-blur-sm bg-white/80 dark:bg-slate-900/80">
           <CardHeader>
-            <CardTitle className="text-4xl font-bold text-gray-900 dark:text-white">
+            <CardTitle className="text-4xl font-bold text-blue-800 dark:text-blue-300">
               Revolutionize Your Teaching with AI
             </CardTitle>
-            <CardDescription className="text-lg text-gray-700 dark:text-gray-300 mt-4">
+            <CardDescription className="text-lg text-blue-600 dark:text-blue-200 mt-4">
               Create engaging, personalized lesson plans in minutes. Our AI-powered
               lesson planner saves you time and helps you focus on what matters
               most—your students.
@@ -30,14 +30,14 @@ const HeroPage = () => {
             {loggedIn ? (
               <Button
                 onClick={() => navigate("/planner")}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all"
               >
                 Plan the Lesson
               </Button>
             ) : (
               <Button
                 onClick={handleClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all"
               >
                 Get Started for Free
               </Button>

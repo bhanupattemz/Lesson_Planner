@@ -22,7 +22,7 @@ export default function PrevPlans() {
     }, []);
 
     return (
-        <main className="min-h-screen bg-background">
+        <main className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900">
             <div className="fixed inset-0 bg-cover bg-center -z-10 opacity-25 dark:opacity-10"
                 style={{ backgroundImage: `url('https://res.cloudinary.com/dmvxvzb5n/image/upload/v1719822500/samples/ecommerce/analog-classic.jpg')` }}>
             </div>
@@ -31,16 +31,17 @@ export default function PrevPlans() {
                 {prev && prev.length > 0 ? (
                     <div className="grid grid-cols-1 gap-5">
                         {prev.map((topic, inx) => (
-                            <Card key={inx} className="backdrop-blur-sm border bg-card">
+                            <Card key={inx} className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border-blue-200 dark:border-blue-800">
                                 <CardHeader>
-                                    <h2 className="text-xl font-bold">{topic.summary.subject}</h2>
-                                    <h3 className="text-lg text-muted-foreground">{topic.summary.topic}</h3>
+                                    <h2 className="text-xl font-bold text-blue-800 dark:text-blue-300">{topic.summary.subject}</h2>
+                                    <h3 className="text-lg text-blue-600 dark:text-blue-400">{topic.summary.topic}</h3>
                                 </CardHeader>
                                 
                                 <CardContent>
                                     <div className="flex flex-wrap gap-2">
                                         {topic.summary.keyConcepts.map((item, i) => (
-                                            <Badge key={i} variant="secondary" className="rounded-full">
+                                            <Badge key={i} variant="secondary" 
+                                                className="rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300">
                                                 {item}
                                             </Badge>
                                         ))}
@@ -56,7 +57,7 @@ export default function PrevPlans() {
                                             localStorage.setItem("prev", JSON.stringify(data));
                                             setPrev(data);
                                         }}
-                                        className="flex items-center gap-2"
+                                        className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white"
                                     >
                                         <MdDeleteForever className="w-4 h-4" />
                                         Delete
@@ -64,6 +65,7 @@ export default function PrevPlans() {
                                     <Button
                                         size="sm"
                                         onClick={() => navigate(`/topic/${inx}`)}
+                                        className="bg-blue-500 hover:bg-blue-600 text-white"
                                     >
                                         Explore More
                                     </Button>
@@ -72,9 +74,9 @@ export default function PrevPlans() {
                         ))}
                     </div>
                 ) : (
-                    <Card className="backdrop-blur-sm border bg-card/50">
+                    <Card className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border-blue-200 dark:border-blue-800">
                         <CardContent className="flex justify-center items-center min-h-[300px]">
-                            <p className="text-2xl font-bold text-muted-foreground">No Topics Found</p>
+                            <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">No Topics Found</p>
                         </CardContent>
                     </Card>
                 )}

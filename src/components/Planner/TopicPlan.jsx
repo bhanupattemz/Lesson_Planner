@@ -33,113 +33,117 @@ export default function LessonPlan() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="bg-card text-card-foreground p-6" ref={contentRef}>
-        <h1 className="text-3xl font-bold mb-4">Topic: {topic.summary?.topic}</h1>
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900 py-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-blue-200 dark:border-blue-800 rounded-lg p-6" ref={contentRef}>
+          <h1 className="text-3xl font-bold mb-4 text-blue-800 dark:text-blue-300">Topic: {topic.summary?.topic}</h1>
 
-        <div className="bg-[#3b82f6] text-white p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold">Summary</h2>
-        </div>
+          <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <h2 className="text-xl font-bold">Summary</h2>
+          </div>
 
-        <table className="w-full border-collapse mb-6">
-          <thead>
-            <tr className="bg-muted">
-              <th className="border border-border p-2 text-left">Date</th>
-              <td className="border border-border p-2 text-left">{topic.summary?.date}</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th className="border border-border p-2 text-left">Subject</th>
-              <td className="border border-border p-2">{topic.summary?.subject}</td>
-            </tr>
-            <tr>
-              <th className="border border-border p-2 text-left">Year Group or Grade Level</th>
-              <td className="border border-border p-2">{topic.summary?.grade}</td>
-            </tr>
-            <tr>
-              <th className="border border-border p-2 text-left">Main Topic or Unit</th>
-              <td className="border border-border p-2">{topic.summary?.topic}</td>
-            </tr>
-            <tr>
-              <th className="border border-border p-2 text-left">Subtopics or Key Concepts</th>
-              <td className="border border-border p-2">{topic.summary?.keyConcepts.join(", ")}</td>
-            </tr>
-          </tbody>
-        </table>
+          <table className="w-full border-collapse mb-6">
+            <thead>
+              <tr className="bg-blue-50 dark:bg-blue-900/50">
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Date</th>
+                <td className="border border-blue-200 dark:border-blue-700 p-2 text-left">{topic.summary?.date}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Subject</th>
+                <td className="border border-blue-200 dark:border-blue-700 p-2">{topic.summary?.subject}</td>
+              </tr>
+              <tr>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Year Group or Grade Level</th>
+                <td className="border border-blue-200 dark:border-blue-700 p-2">{topic.summary?.grade}</td>
+              </tr>
+              <tr>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Main Topic or Unit</th>
+                <td className="border border-blue-200 dark:border-blue-700 p-2">{topic.summary?.topic}</td>
+              </tr>
+              <tr>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Subtopics or Key Concepts</th>
+                <td className="border border-blue-200 dark:border-blue-700 p-2">{topic.summary?.keyConcepts.join(", ")}</td>
+              </tr>
+            </tbody>
+          </table>
 
-        <div className="bg-[#3b82f6] text-white p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold">Materials Needed</h2>
-        </div>
+          <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <h2 className="text-xl font-bold">Materials Needed</h2>
+          </div>
 
-        <div className="mb-6">
-          {topic.materials && topic.materials.map((item, inx) => {
-            return (
-              <p className="text-sm mb-2" key={inx}>
-                {item.required == "true" ?
-                  <span className="inline-block w-4 h-4 bg-primary/20 text-primary rounded-full text-center mr-2">✔</span> :
-                  <span className="inline-block w-4 h-4 bg-primary/20 text-primary rounded-full text-center mr-2"> </span>}
-                {item.name}
-              </p>
-            );
-          })}
-        </div>
-
-        <div className="bg-[#3b82f6] text-white p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold">Learning Objectives</h2>
-        </div>
-
-        <p className="text-sm mb-6">
-          {topic.objective}
-        </p>
-
-        <div className="bg-[#3b82f6] text-white p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold">Lesson Outline</h2>
-        </div>
-
-        <table className="w-full border-collapse mb-6">
-          <thead>
-            <tr className="bg-muted">
-              <th className="border border-primary p-2 text-left">Duration</th>
-              <th className="border border-primary p-2 text-left">Guide</th>
-              <th className="border border-primary p-2 text-left">Remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            {topic.outline && topic.outline.map((item, inx) => {
+          <div className="mb-6">
+            {topic.materials && topic.materials.map((item, inx) => {
               return (
-                <tr className="bg-muted/50" key={inx}>
-                  <td className="border border-primary p-2">{item.duration} minutes</td>
-                  <td className="border border-primary p-2">{item.guide}</td>
-                  <td className="border border-primary p-2">{item.remark}</td>
-                </tr>
+                <p className="text-sm mb-2" key={inx}>
+                  {item.required == "true" ?
+                    <span className="inline-block w-4 h-4 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-center mr-2">✔</span> :
+                    <span className="inline-block w-4 h-4 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-center mr-2"> </span>}
+                  {item.name}
+                </p>
               );
             })}
-          </tbody>
-        </table>
+          </div>
 
-        <div className="bg-[#3b82f6] text-white p-4 rounded-lg mb-6">
-          <h2 className="text-xl font-bold">Notes</h2>
+          <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <h2 className="text-xl font-bold">Learning Objectives</h2>
+          </div>
+
+          <p className="text-sm mb-6 text-blue-800 dark:text-blue-200">
+            {topic.objective}
+          </p>
+
+          <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <h2 className="text-xl font-bold">Lesson Outline</h2>
+          </div>
+
+          <table className="w-full border-collapse mb-6">
+            <thead>
+              <tr className="bg-blue-50 dark:bg-blue-900/50">
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Duration</th>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Guide</th>
+                <th className="border border-blue-200 dark:border-blue-700 p-2 text-left text-blue-700 dark:text-blue-300">Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topic.outline && topic.outline.map((item, inx) => {
+                return (
+                  <tr className="bg-blue-50/50 dark:bg-blue-900/30" key={inx}>
+                    <td className="border border-blue-200 dark:border-blue-700 p-2">{item.duration} minutes</td>
+                    <td className="border border-blue-200 dark:border-blue-700 p-2">{item.guide}</td>
+                    <td className="border border-blue-200 dark:border-blue-700 p-2">{item.remark}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          <div className="bg-blue-500 dark:bg-blue-600 text-white p-4 rounded-lg mb-6">
+            <h2 className="text-xl font-bold">Notes</h2>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-sm text-blue-800 dark:text-blue-200">{topic.note}</p>
+          </div>
         </div>
 
-        <div className="mb-6">
-          <p className="text-sm">{topic.note}</p>
+        <div className="flex gap-2 p-4 justify-center">
+          <Button
+            variant="default"
+            onClick={() => { navigate(`/topic/edit/${_id}`); }}
+            className="bg-blue-500 hover:bg-blue-600 text-white"
+          >
+            Edit
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={generatePDF}
+            className="bg-blue-100 hover:bg-blue-200 text-blue-700 dark:bg-blue-900 dark:hover:bg-blue-800 dark:text-blue-300"
+          >
+            Download PDF
+          </Button>
         </div>
-      </div>
-
-      <div className="flex gap-2 p-4">
-        <Button
-          variant="default"
-          onClick={() => { navigate(`/topic/edit/${_id}`); }}
-        >
-          Edit
-        </Button>
-        <Button
-          variant="secondary"
-          onClick={generatePDF}
-        >
-          Download PDF
-        </Button>
       </div>
     </main>
   );

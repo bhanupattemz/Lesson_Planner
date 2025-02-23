@@ -55,25 +55,29 @@ export default function Planner() {
             navigate("/authente");
         }
     }, []);
+
     if (loading) {
         return (
-            <div className="min-h-screen bg-background flex justify-center"><img src={loadImg} alt="loading-img" /></div>
+            <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900 flex justify-center">
+                <img src={loadImg} alt="loading-img" />
+            </div>
         )
-
     }
-    return (
-        <main className="min-h-screen bg-background">
 
+    return (
+        <main className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-blue-900">
             <div className="flex flex-col lg:flex-row w-[90%] mx-auto p-4 lg:p-8 gap-8">
                 <div className="w-full lg:w-1/2 order-2 lg:order-1">
-                    <Card className="w-full bg-card">
+                    <Card className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border-blue-200 dark:border-blue-800">
                         <CardHeader className="space-y-1">
-                            <CardTitle className="text-2xl font-semibold">Lesson Plan Form</CardTitle>
+                            <CardTitle className="text-2xl font-semibold text-blue-800 dark:text-blue-300">
+                                Lesson Plan Form
+                            </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Topic
                                     </label>
                                     <Input
@@ -82,12 +86,12 @@ export default function Planner() {
                                         value={formData.topic}
                                         onChange={handleChange}
                                         placeholder="Enter the topic"
-                                        className="w-full"
+                                        className="border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Grade Level
                                     </label>
                                     <Select
@@ -95,7 +99,7 @@ export default function Planner() {
                                             setFormData(prev => ({ ...prev, gradeLevel: value }))
                                         }
                                     >
-                                        <SelectTrigger className="w-full">
+                                        <SelectTrigger className="border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500">
                                             <SelectValue placeholder="Select Grade Level" />
                                         </SelectTrigger>
                                         <SelectContent>
@@ -112,7 +116,7 @@ export default function Planner() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Main Concept & Subtopics
                                     </label>
                                     <Textarea
@@ -120,12 +124,12 @@ export default function Planner() {
                                         value={formData.mainConcept}
                                         onChange={handleChange}
                                         placeholder="Describe the main concept and subtopics"
-                                        className="min-h-[100px] resize-none"
+                                        className="min-h-[100px] resize-none border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Materials Needed
                                     </label>
                                     <Textarea
@@ -133,12 +137,12 @@ export default function Planner() {
                                         value={formData.materials}
                                         onChange={handleChange}
                                         placeholder="List the materials needed"
-                                        className="min-h-[100px] resize-none"
+                                        className="min-h-[100px] resize-none border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Learning Objectives
                                     </label>
                                     <Textarea
@@ -146,12 +150,12 @@ export default function Planner() {
                                         value={formData.objectives}
                                         onChange={handleChange}
                                         placeholder="Describe the learning objectives"
-                                        className="min-h-[100px] resize-none"
+                                        className="min-h-[100px] resize-none border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    <label className="text-sm font-medium text-blue-700 dark:text-blue-300">
                                         Lesson Outline
                                     </label>
                                     <Textarea
@@ -159,11 +163,14 @@ export default function Planner() {
                                         value={formData.lessonOutline}
                                         onChange={handleChange}
                                         placeholder="Provide a structured lesson outline"
-                                        className="min-h-[100px] resize-none"
+                                        className="min-h-[100px] resize-none border-blue-200 focus:border-blue-500 dark:border-blue-700 dark:focus:border-blue-500"
                                     />
                                 </div>
 
-                                <Button type="submit" className="w-full">
+                                <Button 
+                                    type="submit" 
+                                    className="w-full bg-blue-500 hover:bg-blue-600 text-white"
+                                >
                                     Submit Lesson Plan
                                 </Button>
                             </form>
@@ -175,7 +182,7 @@ export default function Planner() {
                     <img
                         src="https://res.cloudinary.com/dmvxvzb5n/image/upload/v1719822500/samples/ecommerce/analog-classic.jpg"
                         alt="time-img"
-                        className="w-full h-full object-cover rounded-lg"
+                        className="w-full h-full object-cover rounded-lg shadow-lg"
                     />
                 </div>
             </div>

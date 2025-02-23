@@ -22,7 +22,7 @@ export default function Example() {
         if (user && bcrypt.compareSync(password, user.password)) {
             sessionStorage.setItem('loggedIn', 'true');
             toast.success("Login successful!")
-            window.location.href = "/home";
+            window.location.href = "/";
         } else {
             toast.error("Invalid email or password!")
         }
@@ -226,7 +226,7 @@ export default function Example() {
                                             Password
                                         </label>
                                         <div className="text-sm">
-                                            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                                            <a className="font-semibold text-indigo-600 hover:text-indigo-500">
                                                 Forgot password?
                                             </a>
                                         </div>

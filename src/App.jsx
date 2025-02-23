@@ -21,8 +21,8 @@ function App() {
   return (
     <Fragment>
       <ToastContainer />
-      <Header />
       <Router>
+        <Header />
         <Routes>
           <Route path='/' element={<HeroPage />} />
           <Route path='/home' element={<Home />} />
@@ -34,8 +34,8 @@ function App() {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/*' element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </Fragment>
   );
 }
