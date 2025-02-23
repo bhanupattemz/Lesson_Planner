@@ -50,12 +50,12 @@ Use the following credentials to log in:
 
 2. **Install dependencies:**
     ```bash
-    npm install
+    npm install --force
     ```
 
 3. **Start the development server:**
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Usage
